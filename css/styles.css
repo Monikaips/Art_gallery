@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 900px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0 auto;
+}
+
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 30px;
+    font-size: 28px;
+}
+#Image-Gallery {
+    width: 90%; 
+    margin: 4rem auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#main-image-container {
+    width: 100%;
+    max-height: 600px;
+    background-color: #fff;
+    padding: 1rem;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    margin-bottom: 2rem; /* Added margin for spacing */
+    overflow: hidden;
+}
+
+#main-image {
+    width: 100%;
+    max-height: 600px; /* Adjusted max-height for responsiveness */
+    background-color: #fff;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}
+#main-image-container.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Ensure the container is above other content */
+}
+
+#main-image.fullscreen {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+#main-image-container {
+    position: relative;
+    text-align: center;
+}
+
+#slideshow-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+#thumbnail-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.thumbnail {
+    width: 150px;
+    height: 150px;
+    margin: 0.5rem;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.thumbnail:hover {
+    opacity: 0.7;
+}
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 600px) {
+    /* Adjustments for smaller screens */
+    #thumbnail-container {
+        justify-content: flex-start;
+    }
+
+    .thumbnail {
+        width: 80px;
+        height: 80px;
+    }
+}
